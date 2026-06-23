@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beauty Glam</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#fff5f8;
+}
+
+header{
+    background:#ff4f8b;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+nav{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    margin-top:10px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.hero{
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero h2{
+    color:#d81b60;
+    font-size:2.5rem;
+}
+
+.hero p{
+    margin:15px 0;
+    color:#555;
+}
+
+.btn{
+    background:#ff4f8b;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.produtos{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:40px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    text-align:center;
+    padding-bottom:20px;
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.card h3{
+    margin:15px 0 10px;
+}
+
+.preco{
+    color:#ff4f8b;
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:10px;
+}
+
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+#carrinho{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:white;
+    padding:10px 15px;
+    border-radius:10px;
+    box-shadow:0 2px 10px rgba(0,0,0,.2);
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>Beauty Glam</h1>
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Produtos</a>
+        <a href="#">Contato</a>
+    </nav>
+</header>
+
+<div id="carrinho">
+    🛒 Carrinho: <span id="total">0</span>
+</div>
+
+<section class="hero">
+    <h2>Realce Sua Beleza</h2>
+    <p>Maquiagens incríveis com qualidade profissional.</p>
+    <button class="btn">Comprar Agora</button>
+</section>
+
+<section class="produtos">
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=600" alt="Batom">
+        <h3>Batom Matte</h3>
+        <div class="preco">R$ 29,90</div>
+        <button class="btn" onclick="adicionar()">Adicionar</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=600" alt="Paleta">
+        <h3>Paleta de Sombras</h3>
+        <div class="preco">R$ 79,90</div>
+        <button class="btn" onclick="adicionar()">Adicionar</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600" alt="Base">
+        <h3>Base Líquida</h3>
+        <div class="preco">R$ 49,90</div>
+        <button class="btn" onclick="adicionar()">Adicionar</button>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Beauty Glam - Todos os direitos reservados.</p>
+</footer>
+
+<script>
+let itens = 0;
+
+function adicionar(){
+    itens++;
+    document.getElementById("total").textContent = itens;
+}
+</script>
+
+</body>
+</html>
